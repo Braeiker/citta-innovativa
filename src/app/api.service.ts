@@ -63,7 +63,7 @@ export class ApiService {
     const apiUrlPost = `https://gorest.co.in/public/v2/posts`;
     return this.http.get(apiUrlPost, { headers: this.headers });
   }
-  userDettagli(id: number): Observable<any> {
+  userDet(id: number): Observable<any> {
     this.getApiKey();
     const apiUrlUserDettagli = `https://gorest.co.in/public/v2/users/${id}`;
     return this.http.get(apiUrlUserDettagli, { headers: this.headers });
