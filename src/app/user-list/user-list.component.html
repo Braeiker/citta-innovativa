@@ -1,0 +1,54 @@
+<!-- <div class="container">
+    <table class="table table-hover">
+      <thead class="table-light">
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Gender</th>
+          <th>id</th>
+          <th>Delete</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>
+            <a [routerLink]="['user-posts/', user.id]">{{ user.name }}</a>
+          </td>
+          <td>{{ user.email }}</td>
+          <td [ngStyle]="{'color': (user.status === 'active') ? 'green' : (user.status === 'inactive') ? 'red' : ''}">
+            {{ user.status }}
+          </td>
+          <td>{{ user.gender }}</td>
+          <td>{{ user.id }}</td>
+          <td>
+            <button (click)="deleteUser(user.id)" class="btn btn-danger">X</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+   -->
+<div class="container">
+    <h2>HOME USER LIST <small>METTERE LA TAB</small></h2>
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">Id</div>
+        <div class="col col-2"> Name</div>
+        <div class="col col-3">Email</div>
+        <div class="col col-4">Status</div>
+        <div class="col col-5">Gender</div>
+      </li>
+      <li class="table-row"*ngFor="let user of users">
+        <div class="col col-1" data-label="Id">{{ user.id }}</div>
+        <div class="col col-2" data-label=" Name"> <a [routerLink]="['user-posts/', user.id]">{{ user.name }}</a></div>
+        <div class="col col-3" data-label="Email">{{ user.email }}</div>
+        <div class="col col-4" data-label=" Status"[ngStyle]="{'color': (user.status === 'active') ? 'green' : (user.status === 'inactive') ? 'red' : ''}">
+            {{ user.status }}</div>
+        <div class="col col-5" data-label=" Gender">{{ user.gender }}</div>
+        <td>
+            <button (click)="deleteUser(user.id)" class="btn btn-danger">X</button>
+          </td>
+      </li>
+    </ul>
+  </div>

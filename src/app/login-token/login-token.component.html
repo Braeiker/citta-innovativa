@@ -1,0 +1,23 @@
+
+<div class="cont">
+<div class="form-container">
+  <div class="logo-container">
+    Innovative City
+  </div>
+
+  <form class="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Enter a Token Key</label>
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.apikey" required placeholder="...">
+      <span *ngIf="isFromFailedLogin">The entered API Key is invalid</span>
+    </div>
+
+    <button class="form-submit-btn" type="submit">Log In</button>
+  </form>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+</div>
+</div>
